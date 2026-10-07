@@ -34,7 +34,9 @@ h1{font-size:clamp(3.5rem,14vw,11rem);line-height:.95;letter-spacing:-.03em}
 .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px}
 h2{font-size:clamp(2rem,5vw,3.5rem)}
 .sub{color:var(--muted)}
+.vid{display:block;width:100%;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.grid.videos{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
 .tile{display:flex;flex-direction:column;gap:12px}
 .cover{position:relative;aspect-ratio:4/5;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);text-align:center;padding:16px;overflow:hidden}
 .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -78,34 +80,24 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;paddin
 
 <main>
 <section id="work" class="wrap">
-  <div class="head"><h2>Work</h2><span class="sub">Portfolio · Video &amp; Photo</span></div>
-  <div class="grid">
-    <!-- To add a cover: put an image in the images folder with the file name shown below. Link each tile to the video when you have it. -->
-    <a class="tile" href="https://www.instagram.com/workswithsk">
-      <div class="cover"><span class="tag">VIDEO</span>images/algojo.jpg<img src="images/algojo.jpg" alt="ALGOJO short film" onerror="this.remove()"></div>
-      <div class="name">ALGOJO</div><div class="meta">Short film · [Year]</div>
-    </a>
-    <a class="tile" href="https://www.instagram.com/workswithsk">
-      <div class="cover"><span class="tag">VIDEO</span>images/bad-best-friend.jpg<img src="images/bad-best-friend.jpg" alt="Bad Best Friend music video" onerror="this.remove()"></div>
-      <div class="name">Bad Best Friend</div><div class="meta">Music video · [Year]</div>
-    </a>
-    <a class="tile" href="https://www.instagram.com/workswithsk">
-      <div class="cover"><span class="tag">VIDEO</span>images/your-dream.jpg<img src="images/your-dream.jpg" alt="Your Dream film" onerror="this.remove()"></div>
-      <div class="name">Your Dream</div><div class="meta">Film · [Year]</div>
-    </a>
-    <a class="tile" href="https://www.instagram.com/workswithsk">
-      <div class="cover"><span class="tag">VIDEO</span>images/concert.jpg<img src="images/concert.jpg" alt="Concert stage performance" onerror="this.remove()"></div>
-      <div class="name">Concert</div><div class="meta">Event coverage · [Year]</div>
-    </a>
-    <a class="tile" href="https://www.instagram.com/workswithsk">
-      <div class="cover"><span class="tag">VIDEO</span>images/f1-practice.jpg<img src="images/f1-practice.jpg" alt="F1 Practice reel" onerror="this.remove()"></div>
-      <div class="name">F1 Practice</div><div class="meta">Live reel · [Year]</div>
-    </a>
-    <a class="tile" href="https://www.instagram.com/workswithsk">
-      <div class="cover"><span class="tag">PHOTO</span>images/photo-1.jpg<img src="images/photo-1.jpg" alt="Photography" onerror="this.remove()"></div>
-      <div class="name">[Photo project title]</div><div class="meta">Photography · [Year]</div>
-    </a>
+  <div class="head"><h2>Work</h2><span class="sub">Selected video work</span></div>
+  <div class="grid videos">
+    <!-- Each block below is one video. Upload the file to the videos folder with the same name (video-1.mp4, video-2.mp4, ...).
+         A block whose video file is missing hides itself. To add more, copy a block and change the number. -->
+    <div class="tile">
+      <video class="vid" controls playsinline preload="metadata"><source src="videos/video-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video>
+      <div class="name">[Project title]</div><div class="meta">[Category · Year]</div>
+    </div>
+    <div class="tile">
+      <video class="vid" controls playsinline preload="metadata"><source src="videos/video-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video>
+      <div class="name">[Project title]</div><div class="meta">[Category · Year]</div>
+    </div>
+    <div class="tile">
+      <video class="vid" controls playsinline preload="metadata"><source src="videos/video-3.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video>
+      <div class="name">[Project title]</div><div class="meta">[Category · Year]</div>
+    </div>
   </div>
+  <div><a class="btn btn-line" href="https://www.instagram.com/workswithsk">More on Instagram</a></div>
 </section>
 
 <section id="services" class="wrap">
