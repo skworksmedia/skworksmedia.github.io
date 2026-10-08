@@ -94,65 +94,57 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;paddin
 
 <main>
 <section id="work" class="wrap">
-  <div class="head"><h2>Work</h2><span class="sub">Short-form &amp; event video</span></div>
-  <!-- Videos go in the videos folder: ad-1..3.mp4, ip-1..3.mp4, event-1..5.mp4 (all lowercase).
-       A video whose file is missing hides itself, and a group with nothing in it hides too. -->
+  <div class="head"><h2>Work</h2></div>
+  <!-- Videos go in the videos folder (all lowercase, .mp4): ip-1..3, ad-1..3, event-1..5.
+       A video whose file is missing hides itself, and a group with nothing in it hides too.
+       To show a title under a video, add <div class="name">Title</div> after its video block. -->
   <div class="group">
-    <div class="head"><h3>Ad videos</h3><span class="sub">Made for brands</span></div>
+    <div class="head"><h3>IP content</h3></div>
     <div class="grid videos">
       <div class="tile">
-        <div class="vbox"><span class="tag">AD</span><video class="vid" controls playsinline preload="metadata"><source src="videos/ad-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
-        <div class="name">G Watch</div><div class="meta">Ad video</div>
+        <div class="vbox"><video class="vid" controls playsinline preload="metadata"><source src="videos/ip-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
+        <div class="name">Amexnocap</div>
       </div>
       <div class="tile">
-        <div class="vbox"><span class="tag">AD</span><video class="vid" controls playsinline preload="metadata"><source src="videos/ad-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
-        <div class="name">[Project title]</div><div class="meta">[Brand · Year]</div>
+        <div class="vbox"><video class="vid" controls playsinline preload="metadata"><source src="videos/ip-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
       </div>
       <div class="tile">
-        <div class="vbox"><span class="tag">AD</span><video class="vid" controls playsinline preload="metadata"><source src="videos/ad-3.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
-        <div class="name">[Project title]</div><div class="meta">[Brand · Year]</div>
+        <div class="vbox"><video class="vid" controls playsinline preload="metadata"><source src="videos/ip-3.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
       </div>
     </div>
   </div>
   <div class="group">
-    <div class="head"><h3>IP content</h3><span class="sub">My own personal-brand videos</span></div>
+    <div class="head"><h3>Ads</h3></div>
     <div class="grid videos">
       <div class="tile">
-        <div class="vbox"><span class="tag">IP</span><video class="vid" controls playsinline preload="metadata"><source src="videos/ip-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
-        <div class="name">AMEXNOCAP</div><div class="meta">IP content</div>
+        <div class="vbox"><video class="vid" controls playsinline preload="metadata"><source src="videos/ad-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
+        <div class="name">G Watch</div>
       </div>
       <div class="tile">
-        <div class="vbox"><span class="tag">IP</span><video class="vid" controls playsinline preload="metadata"><source src="videos/ip-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
-        <div class="name">[Project title]</div><div class="meta">[Series · Year]</div>
+        <div class="vbox"><video class="vid" controls playsinline preload="metadata"><source src="videos/ad-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
       </div>
       <div class="tile">
-        <div class="vbox"><span class="tag">IP</span><video class="vid" controls playsinline preload="metadata"><source src="videos/ip-3.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
-        <div class="name">[Project title]</div><div class="meta">[Series · Year]</div>
+        <div class="vbox"><video class="vid" controls playsinline preload="metadata"><source src="videos/ad-3.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
       </div>
     </div>
   </div>
   <div class="group">
-    <div class="head"><h3>Event showcase</h3><span class="sub">Live events &amp; performances</span></div>
+    <div class="head"><h3>Event showcase</h3></div>
     <div class="grid hvideos">
       <div class="tile">
-        <div class="vbox"><span class="tag">EVENT</span><video class="vid h" controls playsinline preload="metadata"><source src="videos/event-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
-        <div class="name">[Event name]</div><div class="meta">[Event · Year]</div>
+        <div class="vbox"><video class="vid h" controls playsinline preload="metadata"><source src="videos/event-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
       </div>
       <div class="tile">
-        <div class="vbox"><span class="tag">EVENT</span><video class="vid h" controls playsinline preload="metadata"><source src="videos/event-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
-        <div class="name">[Event name]</div><div class="meta">[Event · Year]</div>
+        <div class="vbox"><video class="vid h" controls playsinline preload="metadata"><source src="videos/event-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
       </div>
       <div class="tile">
-        <div class="vbox"><span class="tag">EVENT</span><video class="vid h" controls playsinline preload="metadata"><source src="videos/event-3.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
-        <div class="name">[Event name]</div><div class="meta">[Event · Year]</div>
+        <div class="vbox"><video class="vid h" controls playsinline preload="metadata"><source src="videos/event-3.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
       </div>
       <div class="tile">
-        <div class="vbox"><span class="tag">EVENT</span><video class="vid h" controls playsinline preload="metadata"><source src="videos/event-4.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
-        <div class="name">[Event name]</div><div class="meta">[Event · Year]</div>
+        <div class="vbox"><video class="vid h" controls playsinline preload="metadata"><source src="videos/event-4.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
       </div>
       <div class="tile">
-        <div class="vbox"><span class="tag">EVENT</span><video class="vid h" controls playsinline preload="metadata"><source src="videos/event-5.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
-        <div class="name">[Event name]</div><div class="meta">[Event · Year]</div>
+        <div class="vbox"><video class="vid h" controls playsinline preload="metadata"><source src="videos/event-5.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div>
       </div>
     </div>
   </div>
@@ -160,11 +152,11 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;paddin
 </section>
 
 <section id="photos" class="wrap">
-  <div class="head"><h2>Photos</h2><span class="sub">Photo showcase</span></div>
+  <div class="head"><h2>Photos</h2></div>
   <!-- Photos go in the photos folder: portrait-1..5 and landscape-1..5 (jpg, jpeg, png or webp, all lowercase).
        A photo whose file is missing hides itself. Click a photo to open it full size. -->
   <div class="group">
-    <div class="head"><h3>Portrait</h3><span class="sub">Vertical</span></div>
+    <div class="head"><h3>Portrait</h3></div>
     <div class="grid portrait">
       <div class="tile"><a class="photo" href="#" target="_blank" rel="noopener"><img data-base="photos/portrait-1" alt="Portrait photo 1" loading="lazy"></a></div>
       <div class="tile"><a class="photo" href="#" target="_blank" rel="noopener"><img data-base="photos/portrait-2" alt="Portrait photo 2" loading="lazy"></a></div>
@@ -174,7 +166,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;paddin
     </div>
   </div>
   <div class="group">
-    <div class="head"><h3>Landscape</h3><span class="sub">Horizontal</span></div>
+    <div class="head"><h3>Landscape</h3></div>
     <div class="grid landscape">
       <div class="tile"><a class="photo" href="#" target="_blank" rel="noopener"><img data-base="photos/landscape-1" alt="Landscape photo 1" loading="lazy"></a></div>
       <div class="tile"><a class="photo" href="#" target="_blank" rel="noopener"><img data-base="photos/landscape-2" alt="Landscape photo 2" loading="lazy"></a></div>
