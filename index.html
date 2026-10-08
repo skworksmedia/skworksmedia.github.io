@@ -69,10 +69,19 @@ h1 .l:nth-child(2) span{animation-delay:.18s}h1 em{color:var(--ember)}@keyframes
 .row:last-child{border-bottom:1px solid var(--line)}.row h3{font:400 clamp(1.8rem,4vw,3.4rem)/1 var(--serif);margin:0}
 .row p{margin:0;color:var(--mut)}.row .ar{font-size:1.4rem;color:var(--ember);opacity:0;transition:opacity .4s}.row:hover{padding-left:1.2rem;color:var(--ember)}.row:hover .ar{opacity:1}
 .ab{display:grid;grid-template-columns:1fr 2fr;gap:3rem}.ab p{font:400 clamp(1.5rem,3vw,2.5rem)/1.25 var(--serif);margin:0;max-width:30em}
-.ct{background:var(--ember);color:var(--ink)}.ct .k{color:rgba(10,10,9,.7)}.ct h2{font-size:clamp(3.4rem,11.5vw,11.5rem)}.ct p{margin:2rem 0 3rem;font-size:1.15rem}
-.cl{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1.4rem 0;border-top:1px solid rgba(10,10,9,.35);font:400 clamp(1.4rem,3vw,2.4rem) var(--serif);transition:padding .5s cubic-bezier(.2,.8,.2,1)}
-.cl:last-child{border-bottom:1px solid rgba(10,10,9,.35)}.cl small{font:.8rem var(--mono);letter-spacing:.12em;text-transform:uppercase}.cl:hover{padding-left:1rem}
-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:2rem 5vw;background:var(--ink);color:#9B978D;font:.75rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.ct{position:relative;overflow:hidden}
+.ct .w{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr 1fr;gap:4rem;align-items:end}
+.ct h2{font-size:clamp(3.2rem,8.5vw,8.5rem)}.ct h2 em{color:var(--ember)}
+.ct p{margin:2rem 0 0;color:var(--mut);max-width:26rem;font-size:1.1rem}.kl{margin-top:3rem}
+.iris2{position:absolute;width:min(120vh,110vw);height:min(120vh,110vw);right:-22vw;bottom:-45%;fill:none;stroke:rgba(237,231,219,.1);stroke-width:.3;pointer-events:none}
+.cl{position:relative;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1.6rem 0;border-top:1px solid var(--line);font:400 clamp(1.7rem,3.2vw,2.8rem)/1 var(--serif)}
+.cl:last-child{border-bottom:1px solid var(--line)}
+.cl::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--ember);transition:width .7s cubic-bezier(.2,.8,.2,1)}.cl:hover::after{width:100%}
+.cl small{font:.78rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);transition:color .4s}
+.cl b{display:inline-block;margin-left:.8rem;color:var(--ember);font-weight:400;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.cl:hover small{color:var(--bone)}.cl:hover b{transform:translate(4px,-4px)}
+@media(max-width:900px){.ct .w{grid-template-columns:1fr;gap:3rem}}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:2rem 5vw;background:var(--ink);border-top:1px solid rgba(237,231,219,.12);color:#9B978D;font:.75rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
 .box{position:fixed;inset:0;z-index:100;background:rgba(10,10,9,.94);display:flex;align-items:center;justify-content:center;padding:4vw;cursor:zoom-out;opacity:0;animation:fd .35s forwards}.box img{max-width:100%;max-height:100%;object-fit:contain}
 .js .rv{opacity:0;transform:translateY(32px);transition:opacity 1s,transform 1s cubic-bezier(.2,.8,.2,1)}.js .rv.vis{opacity:1;transform:none}
 @media(max-width:700px){.row{grid-template-columns:2.4rem 1fr}.row p{grid-column:2}.row .ar{display:none}.ab{grid-template-columns:1fr}.links{gap:16px;font-size:.8rem}.links a:nth-child(2),.links a:nth-child(4){display:none}.logo{font-size:1.25rem}}
@@ -163,13 +172,18 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
 
 <section id="about" class="light pad"><div class="w ab"><div><div class="k">(05)</div><h2 style="margin-top:1rem">About</h2></div><p class="rv">A videographer and editor based in Kuala Lumpur, working across production and content creation. Got a project in mind? Message me and let's talk about how to shoot it.</p></div></section>
 
-<section id="contact" class="ct pad"><div class="w">
-  <div class="k">(06) — Contact</div>
-  <h2 style="margin-top:1.2rem">Let's make<br>something <em>good.</em></h2>
-  <p>Any works, DM or WhatsApp me.</p>
-  <a class="cl" href="https://wa.me/601171408304"><span>WhatsApp</span><small>011-7140 8304 ↗</small></a>
-  <a class="cl" href="https://www.instagram.com/workswithsk"><span>Instagram</span><small>@workswithsk ↗</small></a>
-  <a class="cl" href="https://www.threads.net/@workswithsk"><span>Threads</span><small>@workswithsk ↗</small></a>
+<section id="contact" class="ct dark pad"><svg class="iris2" id="iris2" viewBox="-100 -100 200 200" aria-hidden="true"></svg><div class="w">
+  <div>
+    <div class="k">(06) — Contact</div>
+    <h2 style="margin-top:1.2rem">Let's make<br>something <em>good.</em></h2>
+    <p>Any works, DM or WhatsApp me.</p>
+    <div class="k kl">Kuala Lumpur · <span id="kl">--:--</span> MYT</div>
+  </div>
+  <div>
+    <a class="cl" href="https://wa.me/601171408304"><span>WhatsApp</span><small>011-7140 8304<b>↗</b></small></a>
+    <a class="cl" href="https://www.instagram.com/workswithsk"><span>Instagram</span><small>@workswithsk<b>↗</b></small></a>
+    <a class="cl" href="https://www.threads.net/@workswithsk"><span>Threads</span><small>@workswithsk<b>↗</b></small></a>
+  </div>
 </div></section>
 
 <footer><span>© SK.Works</span><span>Production | Content Creation · Kuala Lumpur, Malaysia</span></footer>
@@ -182,8 +196,10 @@ var o='<defs><radialGradient id="g"><stop offset="0" stop-color="#FF5A36" stop-o
 for(var k=0;k<6;k++){var a=k*Math.PI/3;o+='<path d="M'+P(94,a)+'L'+P(34,a+.7)+'L'+P(94,a+Math.PI/3)+'"/><path d="M'+P(66,a+.35)+'L'+P(34,a+.7)+'"/>';}
 o+='<polygon points="'+[0,1,2,3,4,5].map(function(k){return P(34,k*Math.PI/3+.7)}).join(' ')+'"/></g>';
 d.getElementById('iris').innerHTML=o;
+var i2=d.getElementById('iris2');if(i2)i2.innerHTML=o.replace(/<circle r="38"[^>]*\/>/,'').replace('id="g"','id="g2"');
 var tc=d.getElementById('tc'),t0=Date.now(),z=function(n){return('0'+n).slice(-2)};
 setInterval(function(){var e=Date.now()-t0;tc.textContent='00:'+z(Math.floor(e/60000)%60)+':'+z(Math.floor(e/1000)%60)+':'+z(Math.floor(e/40)%25)},40);
+var kl=d.getElementById('kl');function ct(){if(kl)kl.textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Kuala_Lumpur',hour:'2-digit',minute:'2-digit'})}ct();setInterval(ct,30000);
 var v=d.querySelector('.herovid');
 if(v)v.addEventListener('loadeddata',function(){d.querySelector('.hero').classList.add('hasvid');var p=v.play();if(p&&p.catch)p.catch(function(){})});
 var mf=d.getElementById('mf');
