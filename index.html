@@ -53,6 +53,7 @@ h1 .l{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
 h1 .l span{display:block;transform:translateY(105%);animation:up 1.2s cubic-bezier(.2,.8,.2,1) forwards}
 h1 .l:nth-child(2) span{animation-delay:.18s}h1 em{color:var(--ember)}@keyframes up{to{transform:none}}
 .lead{max-width:34rem;font-size:clamp(1rem,1.5vw,1.2rem);color:rgba(237,231,219,.82);margin:2rem 0 0;opacity:0;animation:fd 1.2s .7s forwards}@keyframes fd{to{opacity:1}}
+.hero-belief{max-width:35rem;margin:1.25rem 0 0;padding-left:1rem;border-left:2px solid var(--ember);font:400 clamp(.95rem,1.4vw,1.12rem)/1.55 var(--sans);color:var(--bone)}
 .marq{background:var(--ember);color:var(--ink);overflow:hidden;white-space:nowrap;padding:1rem 0}
 .track{display:inline-flex;animation:mq 36s linear infinite}.track span{font:italic 400 clamp(1.5rem,3vw,2.4rem) var(--serif);padding-right:1.5rem}@keyframes mq{to{transform:translateX(-50%)}}
 .mf{font:400 clamp(1.9rem,4.8vw,4.4rem)/1.12 var(--serif);letter-spacing:-.015em;max-width:22em;margin:2rem 0 0}
@@ -110,6 +111,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
   .hero{padding:0 6vw max(17vh,115px)}
   .hero h1{font-size:clamp(3rem,11.5vw,5rem)}
   .lead{max-width:30rem;font-size:1rem;line-height:1.5;margin-top:1.5rem}
+  .hero-belief{font-size:.91rem;line-height:1.4;margin-top:1rem;padding-left:.8rem}
   .fr{inset:82px 6vw 32px}
   .hud{left:6vw;right:6vw;font-size:.66rem;letter-spacing:.07em}
   .hud.t{top:98px}.hud.b{bottom:43px}
@@ -138,7 +140,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
 .about-copy h3 span{color:var(--ember)}
 .about-copy .about-lead{font:400 clamp(1.65rem,2.7vw,2.65rem)/1.18 var(--serif);max-width:19em;margin:0 0 2rem}
 .about-copy .about-body{font:400 clamp(.95rem,1.25vw,1.1rem)/1.8 var(--sans);max-width:37rem;margin:0 0 1.1rem;color:var(--mut)}
-.about-link{display:inline-flex;gap:1.7rem;align-items:center;border-bottom:1px solid var(--ember);padding-bottom:.45rem;margin-top:1.35rem;font:400 clamp(1.3rem,2vw,1.7rem)/1.25 var(--serif);transition:color .25s}
+.about-link{display:inline-flex;gap:1rem;align-items:center;border-bottom:1px solid var(--ember);padding-bottom:.45rem;margin-top:1.35rem;font:400 clamp(1.3rem,2vw,1.7rem)/1.25 var(--serif);transition:color .25s}
 .about-link span{color:var(--ember)}
 .about-link:hover{color:var(--ember)}
 @media(max-width:1000px){.about-head{display:block}.about-head h2{white-space:normal;margin-top:1rem}.about-grid{gap:2.2rem}}
@@ -160,6 +162,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
     <p class="eyebrow">Production — Content Creation</p>
     <h1><span class="l"><span>Stories,</span></span><span class="l"><span><em>in motion.</em></span></span></h1>
     <p class="lead">SK.WORKS offers freelance videography, video editing and content creation in Kuala Lumpur, Malaysia. Events, IP content, ads, reels and photography, from shoot to final edit.</p>
+    <p class="hero-belief">I care about making it look good. I care even more about making it useful.</p>
   </div>
   <div class="hud b"><span>Kuala Lumpur, MY <span class="coords">· 3.139° N 101.687° E</span></span><a href="#story">Scroll</a></div>
 </header>
@@ -242,9 +245,10 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
         <div class="k">Filming · Editing · Creating</div>
         <h3>Hey, I'm SK<span>.</span></h3>
         <p class="about-lead">A freelance videographer, editor and content creator based in Kuala Lumpur, Malaysia.</p>
-        <p class="about-body">I started SK.WORKS as a space to share what I create, tell stories through visuals, and turn ideas into something worth watching.</p>
-        <p class="about-body">From shooting to the final edit, I enjoy every part of the creative process. Always learning, always creating.</p>
-        <a class="about-link" href="#contact">Let's create something together <span aria-hidden="true">↗</span></a>
+        <p class="about-body">I started SK.WORKS because I genuinely enjoy filming, editing and turning ideas into something people want to watch.</p>
+        <p class="about-body">But I don't want to just show up, shoot, send over a video and call it a day. I'd rather understand what you're trying to achieve, what you're struggling with and how we can make something useful together.</p>
+        <p class="about-body">Sometimes it's helping people understand your business better. Sometimes it's showing a side of your brand they haven't seen before. Every project is different, and I like figuring it out with the people I work with.</p>
+        <a class="about-link" href="#contact">Got something in mind? Let's talk <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </div>
