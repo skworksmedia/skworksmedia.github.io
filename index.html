@@ -92,10 +92,42 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
 .js .rv{opacity:0;transform:translateY(32px);transition:opacity 1s,transform 1s cubic-bezier(.2,.8,.2,1)}.js .rv.vis{opacity:1;transform:none}
 @media(max-width:700px){.row{grid-template-columns:2.4rem 1fr}.row p{grid-column:2}.row .ar{display:none}.ab{grid-template-columns:1fr}.links{gap:16px;font-size:.8rem}.links a:nth-child(2),.links a:nth-child(4){display:none}.logo{font-size:1.25rem}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}h1 .l span{transform:none}.lead{opacity:1}}
+/* Responsive navigation: desktop links stay unchanged; on phones all links are available in a menu. */
+.menu-toggle{display:none;align-items:center;justify-content:center;gap:.8rem;min-height:44px;padding:.45rem .8rem;color:var(--bone);background:transparent;border:1px solid rgba(237,231,219,.35);border-radius:3px;font:.72rem var(--mono);letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.menu-toggle:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+.menu-bars{display:flex;flex-direction:column;justify-content:center;gap:5px;width:18px;height:18px}
+.menu-bars::before,.menu-bars::after{content:"";width:18px;height:1px;background:currentColor;transform-origin:center;transition:transform .2s ease}
+@media(max-width:760px){
+  .nav{min-height:70px;padding:12px max(5vw,16px)}
+  .logo{font-size:1.35rem;white-space:nowrap}
+  .menu-toggle{display:inline-flex}
+  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:.55rem max(5vw,16px) 1.1rem;background:rgba(10,10,9,.98);border-bottom:1px solid rgba(237,231,219,.18);box-shadow:0 12px 24px rgba(0,0,0,.35)}
+  .nav.is-open .links{display:flex}
+  .links a,.links a:nth-child(2),.links a:nth-child(4){display:block;font-size:1rem;opacity:1;padding:.8rem 0;border-bottom:1px solid rgba(237,231,219,.12)}
+  .links a:last-child{border-bottom:0}
+  .nav.is-open .menu-bars::before{transform:translateY(3px) rotate(45deg)}
+  .nav.is-open .menu-bars::after{transform:translateY(-3px) rotate(-45deg)}
+  .hero{padding:0 6vw max(17vh,115px)}
+  .hero h1{font-size:clamp(3rem,11.5vw,5rem)}
+  .lead{max-width:30rem;font-size:1rem;line-height:1.5;margin-top:1.5rem}
+  .fr{inset:82px 6vw 32px}
+  .hud{left:6vw;right:6vw;font-size:.66rem;letter-spacing:.07em}
+  .hud.t{top:98px}.hud.b{bottom:43px}
+  .hud.b a::after{width:16px;margin-left:6px}
+  .coords{display:none}
+  .pad{padding:5.5rem 6vw}
+  .row{gap:.65rem 1rem;padding:1.35rem 0}
+  .row h3{font-size:clamp(1.5rem,6.4vw,2.5rem)}
+  .ct .w{gap:2rem}
+  .ct h2{font-size:clamp(3rem,12vw,5rem)}
+  .cl{align-items:center;gap:.75rem;font-size:clamp(1.45rem,6vw,2rem)}
+  .cl small{font-size:.65rem;white-space:nowrap;letter-spacing:.04em}
+}
+@media(max-width:360px){.hero h1{font-size:clamp(2.65rem,11.5vw,4rem)}.hud{font-size:.6rem}}
 </style>
 </head>
 <body>
-<nav class="nav"><a class="logo" href="#top">SK.WORKS<i>.</i></a><div class="links"><a href="#work">Work</a><a href="#photos">Photos</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav>
+<nav class="nav" aria-label="Main navigation"><a class="logo" href="#top">SK.WORKS<i>.</i></a><button class="menu-toggle" type="button" aria-controls="site-links" aria-expanded="false"><span class="menu-label">Menu</span><span class="menu-bars" aria-hidden="true"></span></button><div class="links" id="site-links"><a href="#work">Work</a><a href="#photos">Photos</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav>
 
 <header id="top" class="hero dark">
   <div class="glow"></div>
@@ -110,7 +142,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
     <h1><span class="l"><span>Stories,</span></span><span class="l"><span><em>in motion.</em></span></span></h1>
     <p class="lead">SK.WORKS offers freelance videography, video editing and content creation in Kuala Lumpur, Malaysia. Events, IP content, ads, reels and photography, from shoot to final edit.</p>
   </div>
-  <div class="hud b"><span>Kuala Lumpur, MY · 3.139° N 101.687° E</span><a href="#story">Scroll</a></div>
+  <div class="hud b"><span>Kuala Lumpur, MY <span class="coords">· 3.139° N 101.687° E</span></span><a href="#story">Scroll</a></div>
 </header>
 
 <div class="marq" aria-hidden="true"><div class="track"><span>Event coverage ✦ IP content ✦ Ads ✦ Reels ✦ Photography ✦ Event coverage ✦ IP content ✦ Ads ✦ Reels ✦ Photography ✦ </span><span>Event coverage ✦ IP content ✦ Ads ✦ Reels ✦ Photography ✦ Event coverage ✦ IP content ✦ Ads ✦ Reels ✦ Photography ✦ </span></div></div>
@@ -197,6 +229,15 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
 <script>
 (function(){
 var d=document,h=d.documentElement;h.classList.add('js');
+var nav=d.querySelector('.nav'),menuToggle=d.querySelector('.menu-toggle');
+if(nav&&menuToggle){
+  function setMenu(open){nav.classList.toggle('is-open',open);menuToggle.setAttribute('aria-expanded',String(open));menuToggle.querySelector('.menu-label').textContent=open?'Close':'Menu'}
+  menuToggle.addEventListener('click',function(){setMenu(!nav.classList.contains('is-open'))});
+  nav.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  d.addEventListener('click',function(e){if(nav.classList.contains('is-open')&&!nav.contains(e.target))setMenu(false)});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+  addEventListener('resize',function(){if(innerWidth>760)setMenu(false)});
+}
 var P=function(r,a){return (r*Math.cos(a)).toFixed(2)+','+(r*Math.sin(a)).toFixed(2)};
 var o='<defs><radialGradient id="g"><stop offset="0" stop-color="#FF5A36" stop-opacity=".9"/><stop offset="1" stop-color="#FF5A36" stop-opacity="0"/></radialGradient></defs><circle r="38" fill="url(#g)" stroke="none"/><g class="spin"><circle r="94"/><circle r="66"/>';
 for(var k=0;k<6;k++){var a=k*Math.PI/3;o+='<path d="M'+P(94,a)+'L'+P(34,a+.7)+'L'+P(94,a+Math.PI/3)+'"/><path d="M'+P(66,a+.35)+'L'+P(34,a+.7)+'"/>';}
