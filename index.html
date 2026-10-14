@@ -59,13 +59,10 @@ h1 .l:nth-child(2) span{animation-delay:.18s}h1 em{color:var(--ember)}@keyframes
 .mf{font:400 clamp(1.9rem,4.8vw,4.4rem)/1.12 var(--serif);letter-spacing:-.015em;max-width:22em;margin:2rem 0 0}
 .mf span{opacity:.16;transition:opacity .4s}.mf span.on{opacity:1}
 .group{margin-top:clamp(3rem,7vw,6rem)}.group:not(:has(.tile)){display:none}#photos:not(:has(.tile)){display:none}
-/* Consistent video format layout across IP, Ads, Montage and Event. */
-.format-set{margin-top:clamp(1.7rem,3.5vw,3rem)}
-.format-set+.format-set{margin-top:clamp(2.5rem,5vw,4rem)}
+/* Consistent video layout for all portfolio categories. */
+.format-set{margin-top:clamp(1.5rem,3vw,2.5rem)}
+.format-set+.format-set{margin-top:clamp(2rem,4vw,3rem)}
 .format-set:not(:has(.tile)){display:none}
-.format-label{display:flex;align-items:center;gap:1.1rem;margin:0 0 1.5rem;color:var(--mut);font:.73rem/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase}
-.format-label::after{content:"";height:1px;flex:1;background:var(--line)}
-.format-label span{color:var(--ember)}
 .gh{display:flex;align-items:baseline;gap:1rem;border-top:1px solid var(--line);padding-top:1.1rem;margin-bottom:2rem}
 .gh h3{font:400 clamp(1.7rem,3.2vw,2.6rem)/1 var(--serif);margin:0}
 .grid{display:grid;gap:36px 28px}
@@ -180,11 +177,10 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
 
 <section id="work" class="dark pad"><div class="w">
   <div class="sh"><h2>Work</h2><span class="k">(02)</span></div>
-  <!-- All categories have the same order: Vertical (9:16) first, Horizontal (16:9) second. -->
+  <!-- Each category displays portrait videos first, followed by landscape videos. No format labels shown. -->
   <!-- Upload mp4 files in the /videos folder. Missing videos and empty sections are hidden automatically. -->
   <div class="group format-group"><div class="gh"><span class="k">01</span><h3>IP Content</h3></div>
     <div class="format-set">
-      <p class="format-label">Vertical <span>9:16</span></p>
       <div class="grid g-v">
         <div class="tile rv"><div class="vbox"><video class="vid" controls playsinline preload="metadata" aria-label="IP Content vertical video 1"><source src="videos/ip-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div><div class="name">Amexnocap</div></div>
         <div class="tile rv"><div class="vbox"><video class="vid" controls playsinline preload="metadata" aria-label="IP Content vertical video 2"><source src="videos/ip-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
@@ -192,7 +188,6 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
       </div>
     </div>
     <div class="format-set">
-      <p class="format-label">Horizontal <span>16:9</span></p>
       <div class="grid g-h">
         <div class="tile rv"><div class="vbox"><video class="vid h" controls playsinline preload="metadata" aria-label="IP Content horizontal video 1"><source src="videos/ip-horizontal-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
         <div class="tile rv"><div class="vbox"><video class="vid h" controls playsinline preload="metadata" aria-label="IP Content horizontal video 2"><source src="videos/ip-horizontal-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
@@ -202,7 +197,6 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
   </div>
   <div class="group format-group"><div class="gh"><span class="k">02</span><h3>Ads</h3></div>
     <div class="format-set">
-      <p class="format-label">Vertical <span>9:16</span></p>
       <div class="grid g-v">
         <div class="tile rv"><div class="vbox"><video class="vid" controls playsinline preload="metadata" aria-label="Ads vertical video 1"><source src="videos/ad-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div><div class="name">G Watch</div></div>
         <div class="tile rv"><div class="vbox"><video class="vid" controls playsinline preload="metadata" aria-label="Ads vertical video 2"><source src="videos/ad-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
@@ -210,7 +204,6 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
       </div>
     </div>
     <div class="format-set">
-      <p class="format-label">Horizontal <span>16:9</span></p>
       <div class="grid g-h">
         <div class="tile rv"><div class="vbox"><video class="vid h" controls playsinline preload="metadata" aria-label="Ads horizontal video 1"><source src="videos/ad-horizontal-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
         <div class="tile rv"><div class="vbox"><video class="vid h" controls playsinline preload="metadata" aria-label="Ads horizontal video 2"><source src="videos/ad-horizontal-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
@@ -220,7 +213,6 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
   </div>
   <div class="group format-group"><div class="gh"><span class="k">03</span><h3>Montage</h3></div>
     <div class="format-set">
-      <p class="format-label">Vertical <span>9:16</span></p>
       <div class="grid g-v">
         <div class="tile rv"><div class="vbox"><video class="vid" controls playsinline preload="metadata" aria-label="Montage vertical video 1"><source src="videos/montage-vertical-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
         <div class="tile rv"><div class="vbox"><video class="vid" controls playsinline preload="metadata" aria-label="Montage vertical video 2"><source src="videos/montage-vertical-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
@@ -228,7 +220,6 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
       </div>
     </div>
     <div class="format-set">
-      <p class="format-label">Horizontal <span>16:9</span></p>
       <div class="grid g-h">
         <div class="tile rv"><div class="vbox"><video class="vid h" controls playsinline preload="metadata" aria-label="Montage horizontal video 1"><source src="videos/montage-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
         <div class="tile rv"><div class="vbox"><video class="vid h" controls playsinline preload="metadata" aria-label="Montage horizontal video 2"><source src="videos/montage-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
@@ -238,7 +229,6 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
   </div>
   <div class="group format-group"><div class="gh"><span class="k">04</span><h3>Event Showcase</h3></div>
     <div class="format-set">
-      <p class="format-label">Vertical <span>9:16</span></p>
       <div class="grid g-v">
         <div class="tile rv"><div class="vbox"><video class="vid" controls playsinline preload="metadata" aria-label="Event Showcase vertical video 1"><source src="videos/event-vertical-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
         <div class="tile rv"><div class="vbox"><video class="vid" controls playsinline preload="metadata" aria-label="Event Showcase vertical video 2"><source src="videos/event-vertical-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
@@ -248,7 +238,6 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
       </div>
     </div>
     <div class="format-set">
-      <p class="format-label">Horizontal <span>16:9</span></p>
       <div class="grid g-h">
         <div class="tile rv"><div class="vbox"><video class="vid h" controls playsinline preload="metadata" aria-label="Event Showcase horizontal video 1"><source src="videos/event-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
         <div class="tile rv"><div class="vbox"><video class="vid h" controls playsinline preload="metadata" aria-label="Event Showcase horizontal video 2"><source src="videos/event-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
@@ -260,7 +249,6 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
   </div>
   <div class="group format-group"><div class="gh"><span class="k">05</span><h3>Social Media Reels</h3></div>
     <div class="format-set">
-      <p class="format-label">Vertical <span>9:16</span></p>
       <div class="grid g-v">
         <div class="tile rv"><div class="vbox"><video class="vid" controls playsinline preload="metadata" aria-label="Social Media Reels vertical video 1"><source src="videos/reel-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
         <div class="tile rv"><div class="vbox"><video class="vid" controls playsinline preload="metadata" aria-label="Social Media Reels vertical video 2"><source src="videos/reel-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
@@ -271,7 +259,6 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;paddin
       </div>
     </div>
     <div class="format-set">
-      <p class="format-label">Horizontal <span>16:9</span></p>
       <div class="grid g-h">
         <div class="tile rv"><div class="vbox"><video class="vid h" controls playsinline preload="metadata" aria-label="Social Media Reels horizontal video 1"><source src="videos/reel-horizontal-1.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
         <div class="tile rv"><div class="vbox"><video class="vid h" controls playsinline preload="metadata" aria-label="Social Media Reels horizontal video 2"><source src="videos/reel-horizontal-2.mp4#t=0.1" type="video/mp4" onerror="this.closest('.tile').remove()"></video></div></div>
